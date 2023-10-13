@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.AddressBox = new System.Windows.Forms.TextBox();
+            this.addressBox = new System.Windows.Forms.TextBox();
             this.ownerBox = new System.Windows.Forms.TextBox();
             this.starsBox = new System.Windows.Forms.TextBox();
             this.seatsBox = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@
             this.panel1.Controls.Add(this.seatsBox);
             this.panel1.Controls.Add(this.starsBox);
             this.panel1.Controls.Add(this.ownerBox);
-            this.panel1.Controls.Add(this.AddressBox);
+            this.panel1.Controls.Add(this.addressBox);
             this.panel1.Controls.Add(this.nameBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -108,12 +108,12 @@
             this.nameBox.Size = new System.Drawing.Size(214, 26);
             this.nameBox.TabIndex = 1;
             // 
-            // AddressBox
+            // addressBox
             // 
-            this.AddressBox.Location = new System.Drawing.Point(47, 205);
-            this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(214, 26);
-            this.AddressBox.TabIndex = 2;
+            this.addressBox.Location = new System.Drawing.Point(47, 205);
+            this.addressBox.Name = "addressBox";
+            this.addressBox.Size = new System.Drawing.Size(214, 26);
+            this.addressBox.TabIndex = 2;
             // 
             // ownerBox
             // 
@@ -173,9 +173,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(291, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 25);
+            this.label5.Size = new System.Drawing.Size(189, 25);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Звезды:";
+            this.label5.Text = "Количество звезд:";
             // 
             // seats
             // 
@@ -203,9 +203,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(291, 177);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(135, 25);
+            this.label8.Size = new System.Drawing.Size(190, 25);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Средний чек:";
+            this.label8.Text = "Средний чек (руб.):";
             // 
             // visitorsBox
             // 
@@ -400,7 +400,7 @@
         private System.Windows.Forms.TextBox seatsBox;
         private System.Windows.Forms.TextBox starsBox;
         private System.Windows.Forms.TextBox ownerBox;
-        private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.TextBox addressBox;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.TextBox billBox;
         private System.Windows.Forms.TextBox visitorsBox;
