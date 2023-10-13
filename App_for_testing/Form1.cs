@@ -73,24 +73,38 @@ namespace App_for_testing
             }
         }
 
+
+        int index;
         private void ownButton_Click(object sender, EventArgs e)
         {
             bool do_exist = false;
-            int index;
+            
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name==Convert.ToString(pickedCafeBox))
+                if (Cafes[i].Name==Convert.ToString(pickedCafeBox.Text))
                 {
                     index = i;
                     do_exist = true;
                 }
             }
 
+            if (!do_exist)
+                MessageBox.Show("Кафе с названием "+ Convert.ToString(pickedCafeBox.Text) + " не существует в программе", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            if (Convert.ToString(newownBox.Text)=="")
+                MessageBox.Show("Поле с новым ФИО владельца не заполнено ", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            if ((do_exist) && (Convert.ToString(newownBox.Text) != ""))
+            {
+                if (Cafes[index].get_owner_info() != Convert.ToString(-1))
+                    MessageBox.Show("ФИО владельца этого кафе уже имеется", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                Cafes[index].create_owner(Convert.ToString(newownBox.Text));
+                MessageBox.Show("ФИО владельца успешно изменено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
-
-
-
-
     }
 }

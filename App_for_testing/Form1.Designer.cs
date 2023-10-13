@@ -55,9 +55,12 @@
             this.vsButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
             this.pickedCafeBox = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.showBox = new System.Windows.Forms.TextBox();
-            this.changingLabel = new System.Windows.Forms.Label();
+            this.newownBox = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -224,21 +227,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
-            this.panel2.Controls.Add(this.showBox);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.newownBox);
             this.panel2.Controls.Add(this.pickedCafeBox);
-            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.vsButton);
             this.panel2.Controls.Add(this.ordButton);
             this.panel2.Controls.Add(this.mnyButton);
             this.panel2.Controls.Add(this.infButton);
             this.panel2.Controls.Add(this.strButton);
             this.panel2.Controls.Add(this.ownButton);
-            this.panel2.Controls.Add(this.changingLabel);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Location = new System.Drawing.Point(545, 12);
+            this.panel2.Location = new System.Drawing.Point(541, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 573);
+            this.panel2.Size = new System.Drawing.Size(652, 573);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -246,7 +252,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(12, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(622, 83);
+            this.label9.Size = new System.Drawing.Size(622, 67);
             this.label9.TabIndex = 0;
             this.label9.Text = "Введите название кафе для совершения действий:";
             // 
@@ -254,7 +260,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(159, 132);
+            this.label10.Location = new System.Drawing.Point(158, 136);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(301, 32);
             this.label10.TabIndex = 1;
@@ -263,7 +269,7 @@
             // ownButton
             // 
             this.ownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ownButton.Location = new System.Drawing.Point(28, 177);
+            this.ownButton.Location = new System.Drawing.Point(30, 298);
             this.ownButton.Name = "ownButton";
             this.ownButton.Size = new System.Drawing.Size(164, 59);
             this.ownButton.TabIndex = 3;
@@ -274,7 +280,7 @@
             // strButton
             // 
             this.strButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.strButton.Location = new System.Drawing.Point(209, 177);
+            this.strButton.Location = new System.Drawing.Point(238, 380);
             this.strButton.Name = "strButton";
             this.strButton.Size = new System.Drawing.Size(177, 59);
             this.strButton.TabIndex = 4;
@@ -284,9 +290,9 @@
             // infButton
             // 
             this.infButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.infButton.Location = new System.Drawing.Point(326, 248);
+            this.infButton.Location = new System.Drawing.Point(30, 482);
             this.infButton.Name = "infButton";
-            this.infButton.Size = new System.Drawing.Size(265, 59);
+            this.infButton.Size = new System.Drawing.Size(251, 59);
             this.infButton.TabIndex = 5;
             this.infButton.Text = "Получить информацию о владельце";
             this.infButton.UseVisualStyleBackColor = true;
@@ -294,7 +300,7 @@
             // mnyButton
             // 
             this.mnyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mnyButton.Location = new System.Drawing.Point(28, 248);
+            this.mnyButton.Location = new System.Drawing.Point(299, 482);
             this.mnyButton.Name = "mnyButton";
             this.mnyButton.Size = new System.Drawing.Size(137, 59);
             this.mnyButton.TabIndex = 6;
@@ -304,7 +310,7 @@
             // ordButton
             // 
             this.ordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ordButton.Location = new System.Drawing.Point(179, 248);
+            this.ordButton.Location = new System.Drawing.Point(470, 482);
             this.ordButton.Name = "ordButton";
             this.ordButton.Size = new System.Drawing.Size(134, 59);
             this.ordButton.TabIndex = 7;
@@ -314,7 +320,7 @@
             // vsButton
             // 
             this.vsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.vsButton.Location = new System.Drawing.Point(402, 177);
+            this.vsButton.Location = new System.Drawing.Point(445, 298);
             this.vsButton.Name = "vsButton";
             this.vsButton.Size = new System.Drawing.Size(189, 59);
             this.vsButton.TabIndex = 8;
@@ -335,39 +341,64 @@
             // 
             // pickedCafeBox
             // 
-            this.pickedCafeBox.Location = new System.Drawing.Point(179, 71);
+            this.pickedCafeBox.Location = new System.Drawing.Point(189, 81);
             this.pickedCafeBox.Multiline = true;
             this.pickedCafeBox.Name = "pickedCafeBox";
             this.pickedCafeBox.Size = new System.Drawing.Size(247, 36);
             this.pickedCafeBox.TabIndex = 11;
             // 
-            // button8
+            // newownBox
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(264, 511);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(109, 47);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Сделать";
-            this.button8.UseVisualStyleBackColor = true;
+            this.newownBox.Location = new System.Drawing.Point(18, 223);
+            this.newownBox.Multiline = true;
+            this.newownBox.Name = "newownBox";
+            this.newownBox.Size = new System.Drawing.Size(191, 69);
+            this.newownBox.TabIndex = 12;
             // 
-            // showBox
+            // textBox2
             // 
-            this.showBox.Location = new System.Drawing.Point(28, 371);
-            this.showBox.Multiline = true;
-            this.showBox.Name = "showBox";
-            this.showBox.Size = new System.Drawing.Size(563, 134);
-            this.showBox.TabIndex = 12;
+            this.textBox2.Location = new System.Drawing.Point(231, 348);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(195, 26);
+            this.textBox2.TabIndex = 13;
             // 
-            // changingLabel
+            // textBox3
             // 
-            this.changingLabel.AutoSize = true;
-            this.changingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.changingLabel.Location = new System.Drawing.Point(22, 325);
-            this.changingLabel.Name = "changingLabel";
-            this.changingLabel.Size = new System.Drawing.Size(41, 32);
-            this.changingLabel.TabIndex = 2;
-            this.changingLabel.Text = "...";
+            this.textBox3.Location = new System.Drawing.Point(421, 223);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(226, 69);
+            this.textBox3.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(3, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(231, 25);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Новое ФИО владельца:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label6.Location = new System.Drawing.Point(436, 195);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(211, 25);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Кафе для сравнения:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(226, 315);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(200, 25);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Новое кол-во звезд:";
             // 
             // Form1
             // 
@@ -415,9 +446,12 @@
         private System.Windows.Forms.Button ownButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox showBox;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label changingLabel;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox newownBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
     }
 }
 
