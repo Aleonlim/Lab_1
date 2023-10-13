@@ -16,10 +16,6 @@ namespace App_for_testing
 
         List<Cafe> Cafes = new List<Cafe>();
 
-
-
-
-
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +26,7 @@ namespace App_for_testing
             bool is_error =false;
             try
             {
+                //соответствие типам ? продолжим : catch
                 string name = Convert.ToString(nameBox.Text);
                 string address = Convert.ToString(addressBox.Text);
                 string owner = Convert.ToString(ownerBox.Text);
@@ -66,17 +63,33 @@ namespace App_for_testing
                 }
             }
 
-            catch(FormatException)
+            catch(FormatException) //ошибка форматирования
             {
                 MessageBox.Show("Неверно заполнена форма по созданию объекта. Проверте поля ввода.", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception)
+            catch (Exception) //другие исключения
             {
                 MessageBox.Show("Возникла ошибка, попробуйте перезапустить программу.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        
+        private void ownButton_Click(object sender, EventArgs e)
+        {
+            bool do_exist = false;
+            int index;
+            for (int i = 0; i < Cafes.Count; i++)
+            {
+                if (Cafes[i].Name==Convert.ToString(pickedCafeBox))
+                {
+                    index = i;
+                    do_exist = true;
+                }
+            }
+
+
+        }
+
+
 
 
     }

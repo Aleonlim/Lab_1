@@ -47,7 +47,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.changingLabel = new System.Windows.Forms.Label();
             this.ownButton = new System.Windows.Forms.Button();
             this.strButton = new System.Windows.Forms.Button();
             this.infButton = new System.Windows.Forms.Button();
@@ -55,9 +54,10 @@
             this.ordButton = new System.Windows.Forms.Button();
             this.vsButton = new System.Windows.Forms.Button();
             this.createButton = new System.Windows.Forms.Button();
+            this.pickedCafeBox = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.pickCafeBox = new System.Windows.Forms.TextBox();
             this.showBox = new System.Windows.Forms.TextBox();
+            this.changingLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -225,7 +225,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.LightBlue;
             this.panel2.Controls.Add(this.showBox);
-            this.panel2.Controls.Add(this.pickCafeBox);
+            this.panel2.Controls.Add(this.pickedCafeBox);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.vsButton);
             this.panel2.Controls.Add(this.ordButton);
@@ -243,13 +243,12 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(12, 24);
+            this.label9.Location = new System.Drawing.Point(12, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(620, 32);
+            this.label9.Size = new System.Drawing.Size(622, 83);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Выберете кафе для совершения действий:";
+            this.label9.Text = "Введите название кафе для совершения действий:";
             // 
             // label10
             // 
@@ -261,16 +260,6 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "Выберите действие:";
             // 
-            // changingLabel
-            // 
-            this.changingLabel.AutoSize = true;
-            this.changingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.changingLabel.Location = new System.Drawing.Point(22, 325);
-            this.changingLabel.Name = "changingLabel";
-            this.changingLabel.Size = new System.Drawing.Size(303, 32);
-            this.changingLabel.TabIndex = 2;
-            this.changingLabel.Text = "ропблполрппропрпр";
-            // 
             // ownButton
             // 
             this.ownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -280,6 +269,7 @@
             this.ownButton.TabIndex = 3;
             this.ownButton.Text = "Изменить владельца";
             this.ownButton.UseVisualStyleBackColor = true;
+            this.ownButton.Click += new System.EventHandler(this.ownButton_Click);
             // 
             // strButton
             // 
@@ -343,6 +333,14 @@
             this.createButton.UseVisualStyleBackColor = false;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
+            // pickedCafeBox
+            // 
+            this.pickedCafeBox.Location = new System.Drawing.Point(179, 71);
+            this.pickedCafeBox.Multiline = true;
+            this.pickedCafeBox.Name = "pickedCafeBox";
+            this.pickedCafeBox.Size = new System.Drawing.Size(247, 36);
+            this.pickedCafeBox.TabIndex = 11;
+            // 
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -353,14 +351,6 @@
             this.button8.Text = "Сделать";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // pickCafeBox
-            // 
-            this.pickCafeBox.Location = new System.Drawing.Point(179, 71);
-            this.pickCafeBox.Multiline = true;
-            this.pickCafeBox.Name = "pickCafeBox";
-            this.pickCafeBox.Size = new System.Drawing.Size(247, 36);
-            this.pickCafeBox.TabIndex = 11;
-            // 
             // showBox
             // 
             this.showBox.Location = new System.Drawing.Point(28, 371);
@@ -368,6 +358,16 @@
             this.showBox.Name = "showBox";
             this.showBox.Size = new System.Drawing.Size(563, 134);
             this.showBox.TabIndex = 12;
+            // 
+            // changingLabel
+            // 
+            this.changingLabel.AutoSize = true;
+            this.changingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.changingLabel.Location = new System.Drawing.Point(22, 325);
+            this.changingLabel.Name = "changingLabel";
+            this.changingLabel.Size = new System.Drawing.Size(41, 32);
+            this.changingLabel.TabIndex = 2;
+            this.changingLabel.Text = "...";
             // 
             // Form1
             // 
@@ -406,18 +406,18 @@
         private System.Windows.Forms.TextBox visitorsBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.TextBox showBox;
-        private System.Windows.Forms.TextBox pickCafeBox;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox pickedCafeBox;
         private System.Windows.Forms.Button vsButton;
         private System.Windows.Forms.Button ordButton;
         private System.Windows.Forms.Button mnyButton;
         private System.Windows.Forms.Button infButton;
         private System.Windows.Forms.Button strButton;
         private System.Windows.Forms.Button ownButton;
-        private System.Windows.Forms.Label changingLabel;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox showBox;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label changingLabel;
     }
 }
 
