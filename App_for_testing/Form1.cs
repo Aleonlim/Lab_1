@@ -49,14 +49,23 @@ namespace App_for_testing
 
                 if ((num_of_seats <0) || (curr_visitors < 0)||(average_bill < 0))
                 {
-                    MessageBox.Show("Количество звезд или посадочных мест и Число посетителей не могут быть меньше нуля.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Количество посадочных мест, средний чек и число посетителей не могут быть меньше нуля.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     is_error = true;
+                }
+
+                for (int i = 0; i < Cafes.Count; i++)
+                {
+                    if (Cafes[i].Name == Convert.ToString(nameBox.Text))
+                    {
+                        is_error = true;
+                        MessageBox.Show("Кафе с таким названием уже создано.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
 
                 if (owner == "")
                     owner = Convert.ToString(-1);
 
-                if (!is_error)
+                if (!is_error) //если все ок
                 {
                     Cafes.Add(new Cafe(name, address, owner, stars, num_of_seats, curr_visitors, average_bill));
                     MessageBox.Show("Объект типа Кафе создан", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -104,6 +113,40 @@ namespace App_for_testing
                 Cafes[index].create_owner(Convert.ToString(newownBox.Text));
                 MessageBox.Show("ФИО владельца успешно изменено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void strButton_Click(object sender, EventArgs e)
+        {
+            bool do_exist = false;
+            bool is_error = false;
+
+            for (int i = 0; i < Cafes.Count; i++)
+            {
+                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                {
+                    index = i;
+                    do_exist = true;
+                }
+            }
+
+            if (!do_exist)
+            {
+                MessageBox.Show("Кафе с названием " + Convert.ToString(pickedCafeBox.Text) + " не существует в программе", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                is_error = true;
+            }
+            if ((Convert.ToString(newstarsBox.Text) == "")||(!int.TryParse(Convert.ToString(newstarsBox.Text),out int newstars)))
+            {
+                MessageBox.Show("Поле с новым количеством звезд не заполнено, либо введено не целое число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                is_error = true;
+            }
+
+            if (!is_error)
+            {
+                if (Cafes[index].change_stars(Convert.ToInt32(newstarsBox.Text)))
+                    MessageBox.Show("Количество звезд успешно изменено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Изменить число звезд возможно только на +(-)1, причем число звезд должно быть больше или равно 0 и меньше или равно 5", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
