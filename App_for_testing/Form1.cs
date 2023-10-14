@@ -36,7 +36,7 @@ namespace App_for_testing
                 float average_bill = Convert.ToSingle(billBox.Text);
 
                 //незаполненные поля (допустимо не вводить фио владельца)
-                if ((stars*num_of_seats*curr_visitors* average_bill ==0)||(name=="")||(address==""))
+                if ((string.IsNullOrWhiteSpace(starsBox.Text)) || (string.IsNullOrWhiteSpace(seatsBox.Text)) || (string.IsNullOrWhiteSpace(billBox.Text)) || (string.IsNullOrWhiteSpace(name))|| (string.IsNullOrWhiteSpace(address)))
                 {
                     MessageBox.Show("Не все поля ввода заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     is_error = true;
@@ -63,7 +63,7 @@ namespace App_for_testing
                 //уникальность названия
                 for (int i = 0; i < Cafes.Count; i++)
                 {
-                    if (Cafes[i].Name == Convert.ToString(nameBox.Text))
+                    if (Cafes[i].Name == nameBox.Text)
                     {
                         is_error = true;
                         MessageBox.Show("Кафе с таким названием уже создано", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -71,7 +71,7 @@ namespace App_for_testing
                 }
 
                 //для метода изменения владельца
-                if (owner == "")
+                if (string.IsNullOrWhiteSpace(owner))
                     owner = Convert.ToString(-1);
 
                 //если все ок
@@ -106,7 +106,7 @@ namespace App_for_testing
             //нахождение кафе в списке по имени
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
@@ -120,7 +120,7 @@ namespace App_for_testing
                 is_error = true;
             }
 
-            if (Convert.ToString(newownBox.Text) == "")
+            if (newownBox.Text == "")
             { 
                 MessageBox.Show("Поле с новым ФИО владельца не заполнено ", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 is_error = true;
@@ -129,7 +129,7 @@ namespace App_for_testing
             //если нет ошибки
             if (!is_error)
             {
-                if (Cafes[index].create_owner(Convert.ToString(newownBox.Text)))
+                if (Cafes[index].create_owner(newownBox.Text))
                     MessageBox.Show("ФИО владельца успешно изменено", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //если ФИО уже было
                 else
@@ -146,7 +146,7 @@ namespace App_for_testing
             //поиск кафе
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
@@ -161,7 +161,7 @@ namespace App_for_testing
             }
 
             //поле не заполнено или не int
-            if ((Convert.ToString(newstarsBox.Text) == "")||(!int.TryParse(Convert.ToString(newstarsBox.Text),out int newstars)))
+            if ((string.IsNullOrWhiteSpace(newstarsBox.Text))||(!int.TryParse(newstarsBox.Text,out int newstars)))
             {
                 MessageBox.Show("Поле с новым количеством звезд не заполнено, либо введено не целое число", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 is_error = true;
@@ -189,13 +189,13 @@ namespace App_for_testing
             //поиск 2ух кафе в списке
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
                 }
 
-                if (Cafes[i].Name == Convert.ToString(vsBox.Text))
+                if (Cafes[i].Name == vsBox.Text)
                 {
                     index2 = i;
                     do_exist2 = true;
@@ -214,7 +214,7 @@ namespace App_for_testing
                 is_error = true;
             }
 
-            if (Convert.ToString(vsBox.Text) == "")
+            if (string.IsNullOrWhiteSpace(vsBox.Text))
             {
                 MessageBox.Show("Название кафе для сравнения не введено", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 is_error = true;
@@ -237,7 +237,7 @@ namespace App_for_testing
             //поиск кафе
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
@@ -264,7 +264,7 @@ namespace App_for_testing
             //поиск кафе
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
@@ -285,7 +285,7 @@ namespace App_for_testing
             //поиск кафе
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
@@ -312,7 +312,7 @@ namespace App_for_testing
             //поиск кафе
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Convert.ToString(pickedCafeBox.Text))
+                if (Cafes[i].Name == pickedCafeBox.Text)
                 {
                     index = i;
                     do_exist = true;
